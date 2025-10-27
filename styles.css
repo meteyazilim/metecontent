@@ -1,0 +1,346 @@
+/* styles.css */
+:root {
+    /* Renk Paleti (Koyu Tema ve Turuncu) */
+    --color-primary: #ff8c00; /* Turuncu (Ana İşlem rengi) */
+    --color-secondary: #ffaf4d; /* Daha açık turuncu */
+    
+    --color-background: #1e1e1e; /* Koyu Gri Arkaplan */
+    --color-background-light: #2c2c2c; /* Kart/Eleman Arkaplanı */
+    
+    --color-text: #e0e0e0; /* Açık Gri Metin */
+    --color-text-light: #ffffff; /* Beyaz Metin */
+    --color-hover: #3a3a3a; /* Hover Rengi */
+    
+    --color-success: #4CAF50;
+    --color-danger: #F44336;
+    --color-border: #444;
+    
+    --border-radius: 8px;
+    --padding-base: 20px;
+}
+
+/* Evrensel Stil ve Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: var(--color-text); 
+    background-color: var(--color-background);
+    scroll-behavior: smooth; /* Yumuşak kaydırma */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--padding-base);
+}
+
+/* Başlık ve Buton Stilleri */
+h1, h2 {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: background-color 0.3s ease;
+}
+
+.primary-button {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+}
+
+.primary-button:hover {
+    background-color: #cc7000; /* Koyu Turuncu */
+}
+
+/* ========================================================= */
+/* HEADER VE NAVİGASYON */
+/* ========================================================= */
+
+.main-header {
+    background-color: var(--color-background-light);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px var(--padding-base);
+    position: relative;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--color-primary);
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    margin-left: 25px;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+}
+
+/* Mobil Menü Stilleri */
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.mobile-nav {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--color-background-light);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    min-width: 180px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-nav.show {
+    opacity: 1;
+    visibility: visible;
+    display: block; 
+}
+
+.mobile-nav a {
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: var(--color-text);
+    border-bottom: 1px solid var(--color-hover);
+}
+
+.mobile-nav a:hover {
+    background-color: var(--color-hover);
+}
+
+/* ========================================================= */
+/* ORTAK BÖLÜM STİLLERİ */
+/* ========================================================= */
+
+section {
+    padding: 80px 0;
+}
+
+/* Hero Section */
+.hero-section {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    text-align: center;
+    padding: 100px 20px;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    color: var(--color-text-light);
+}
+
+.hero-section p {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: var(--color-text);
+}
+
+
+/* ========================================================= */
+/* PORTFOLYO STİLLERİ */
+/* ========================================================= */
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--padding-base);
+    margin-top: 40px;
+}
+
+.project-card {
+    background-color: var(--color-background-light);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-card h3 {
+    padding: 15px 15px 5px;
+    color: var(--color-primary);
+}
+
+.project-card p {
+    padding: 0 15px 15px;
+    font-size: 0.95rem;
+    color: var(--color-text);
+}
+
+.project-card .button {
+    margin: 0 15px 20px;
+    display: block;
+    width: calc(100% - 30px);
+}
+
+
+/* ========================================================= */
+/* İLETİŞİM STİLLERİ */
+/* ========================================================= */
+
+.contact-section {
+    background-color: var(--color-background);
+}
+
+.contact-section form {
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: var(--padding-base);
+    background-color: var(--color-background-light);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.contact-section input[type="text"],
+.contact-section input[type="email"],
+.contact-section textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius);
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+.contact-section textarea {
+    resize: vertical;
+}
+
+.contact-section button {
+    padding: 15px;
+    width: 100%;
+}
+
+.contact-details {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.contact-details h3 {
+    color: var(--color-text-light);
+    margin-bottom: 25px;
+}
+
+.contact-details p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+.contact-details i {
+    color: var(--color-primary);
+    margin-right: 10px;
+}
+
+.contact-details a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-details a:hover {
+    color: var(--color-primary);
+}
+
+
+/* ========================================================= */
+/* FOOTER */
+/* ========================================================= */
+
+.main-footer {
+    background-color: var(--color-background-light);
+    color: var(--color-text);
+    text-align: center;
+    padding: 25px 0;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.9rem;
+}
+
+.main-footer a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================================= */
+/* RESPONSIVE AYARLAR */
+/* ========================================================= */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none; 
+    }
+
+    .menu-toggle {
+        display: block; 
+    }
+    
+    .hero-section h1 {
+        font-size: 2.5rem;
+    }
+
+    section {
+        padding: 50px 0;
+    }
+}

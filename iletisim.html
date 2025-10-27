@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | MeteContent</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    
+    <header class="main-header">
+        <div class="container nav-container">
+            <div class="logo">MeteContent</div>
+            
+            <nav class="main-nav desktop-nav">
+                <a href="index.html">Ana Sayfa</a>
+                <a href="portfolyo.html">Portfolyo</a>
+                <a href="iletisim.html" class="active">İletişim</a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <nav class="mobile-nav" id="mobile-dropdown-menu">
+            <a href="index.html">Ana Sayfa</a>
+            <a href="portfolyo.html">Portfolyo</a>
+            <a href="iletisim.html">İletişim</a>
+        </nav>
+    </header>
+
+    <main>
+      <section id="contact" class="contact-section">
+    <div class="container">
+        <h2>Bize Ulaşın</h2>
+        
+        <form id="contact-form" action="https://formspree.io/f/mpwoqyra" method="POST">
+    
+    <input type="hidden" name="_subject" value="MeteContent Yeni İletişim Mesajı">
+
+    <input type="hidden" name="_next" value="https://meteyazilim.github.io/metecontent"> 
+    <input type="text" name="name" placeholder="Adınız Soyadınız" required>
+    <input type="email" name="email" placeholder="E-posta Adresiniz" required>
+    <textarea name="message" placeholder="Proje Detayları / Mesajınız..." rows="6" required></textarea>
+    <button type="submit" class="button primary-button">Teklif/Mesaj Gönder</button>
+</form>
+        <div class="contact-details">
+            </div>
+    </div>
+</section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>Telefon: <a href="tel:05515022328">0551 502 23 28</a> | E-posta: <a href="mailto:ahmete0677@gmail.com">ahmete0677@gmail.com</a></p>
+            <p>&copy; 2025 MeteContent. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
